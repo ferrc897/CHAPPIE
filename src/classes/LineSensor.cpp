@@ -1,17 +1,17 @@
 #include "LineSensors.h"
 
-LineSensor::LineSensor() {
+LineSensors::LineSensors() {
     qtr.setTypeAnalog();
     qtr.setSensorPins(sensorPins, 8); // Assuming 8 sensors
 }
 
-void LineSensor::calibrate() {
+void LineSensors::calibrate() {
     for (uint16_t i = 0; i < 400; i++) {
         qtr.calibrate();
     }
 }
 
-int LineSensor::readPosition() {
+int LineSensors::readPosition() {
     qtr.readLineBlack(sensorValues);
 
     long numerator = 0;
