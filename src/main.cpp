@@ -1,19 +1,13 @@
-#include <Arduino.h>
+#include "Chappie.h"
+#include <QTRSensors.h>
 
-// put function declarations here:
-int myFunction(int, int);
+Chappie chappie = Chappie();
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
-  Serial.println(result); // Should print 5
+    Serial.begin(9600);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+    Serial.println("Hello, Chappie!");
+    delay(1000);
 }
