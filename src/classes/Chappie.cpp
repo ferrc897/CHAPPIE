@@ -1,7 +1,7 @@
 #include "Chappie.h"
 #include "Motor.h"
 
-Chappie::Chappie() : motorRight(3, 4, 5), motorLeft(6, 7, 8) {
+Chappie::Chappie() : motorRight(4, 5, 6), motorLeft(7, 8, 9) {
   
 };
 
