@@ -1,9 +1,7 @@
 #include "Motor.h"
 
-Motor::Motor(int in1, int in2, int en) {
-  int pinIn1 = in1;
-  int pinIn2 = in2;
-  int pinEn = en;
+Motor::Motor(int in1, int in2, int en) 
+  : pinIn1(in1), pinIn2(in2), pinEn(en) {
 
   pinMode(pinIn1, OUTPUT);
   pinMode(pinIn2, OUTPUT);
