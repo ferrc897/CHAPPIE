@@ -3,11 +3,17 @@
 
 #include <Arduino.h>
 #include "Motor.h"
+#include "Ultrasonic.h"
+#include "Claw.h"
 
 class Chappie {
 private:
     Motor motorRight;
     Motor motorLeft;
+    Ultrasonic ultrasonicFront;
+    Ultrasonic ultrasonicRight;
+    Ultrasonic ultrasonicLeft;
+    Claw claw;
 
 public:
     Chappie();

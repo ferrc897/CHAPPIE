@@ -7,6 +7,7 @@
 namespace p1 {
     void hold();
     void kick();
+    void ball();
 }
 
 namespace p2 {

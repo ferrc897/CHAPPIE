@@ -1,7 +1,9 @@
 #include "Chappie.h"
 #include "Motor.h"
 
-Chappie::Chappie() : motorRight(4, 5, 6), motorLeft(7, 8, 9) {
+Chappie::Chappie() : motorRight(4, 5, 6), motorLeft(7, 8, 9),
+  ultrasonicFront(10, 11), ultrasonicRight(12, 13), ultrasonicLeft(14, 15), claw(9) {
+  // Constructor implementation
   
 };
 

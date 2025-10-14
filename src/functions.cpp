@@ -1,23 +1,48 @@
 #include "functions.h"
 
+namespace p1 {
+    void hold() {
+        
+    }
 
-void lineFollower() {
-    // PID constants
-    float Kp = 0.021, Ki = 0.0, Kd = 0.0;
-    float error = 0, integralError = 0, derivativeError, lastError = 0;
-    int baseSpeed = 150;
+    void kick() {
+        chappie.moveForward(255, 255);
+        delay(500);
+        chappie.stop();
+        delay(500);
+        chappie.moveBackward(255, 255);
+        delay(500);
+        chappie.stop();
+    }
 
-    while (true) {
-        int position = lineSensors.readPosition();
-        error = -position;
-        integralError += error;
-        derivativeError = error - lastError;
+    void circuit() {
+        chappie.moveForward(200, 200);
+        delay(2000);
+        chappie.moveBackward(200, 200);
+        delay(2000);
+        chappie.stop();
+    }
+}
 
-        float pid = Kp * error + Ki * integralError + Kd * derivativeError;
+namespace p2 {
+    void lineFollower() {
+        // PID constants
+        float Kp = 0.021, Ki = 0.0, Kd = 0.0;
+        float error = 0, integralError = 0, derivativeError, lastError = 0;
+        int baseSpeed = 150;
 
-        int speedRight = constrain(baseSpeed + pid, 0, 255);
-        int speedLeft = constrain(baseSpeed - pid, 0, 255);
+        while (true) {
+            int position = lineSensors.readPosition();
+            error = -position;
+            integralError += error;
+            derivativeError = error - lastError;
 
-        chappie.moveForward(speedRight, speedLeft);
+            float pid = Kp * error + Ki * integralError + Kd * derivativeError;
+
+            int speedRight = constrain(baseSpeed + pid, 0, 255);
+            int speedLeft = constrain(baseSpeed - pid, 0, 255);
+
+            chappie.moveForward(speedRight, speedLeft);
+        }
     }
 }
