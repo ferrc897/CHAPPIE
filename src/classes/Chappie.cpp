@@ -2,7 +2,7 @@
 #include "Motor.h"
 
 Chappie::Chappie() : motorRight(4, 5, 6), motorLeft(7, 8, 9),
-  ultrasonicFront(10, 11), ultrasonicRight(12, 13), ultrasonicLeft(14, 15), claw(9) {
+  ultrasonicFront(10, 11), ultrasonicRight(12, 13), ultrasonicLeft(14, 15), claw(9), ff(2) {
   // Constructor implementation
   
 };
@@ -49,3 +49,14 @@ bool Chappie::isClawHolding() {
     return claw.holding;
 }
 
+void Chappie::kickBall() {
+    claw.open();
+}
+
+void Chappie::holdBall() {
+    claw.close();
+}
+
+bool Chappie::clawSensor() {
+    return ff.detectsBall();
+}

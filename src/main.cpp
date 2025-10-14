@@ -6,6 +6,18 @@ void setup() {
 }
 
 void loop() {
-    Serial.println("Hello, Chappie!");
-    delay(1000);
+    if (chappie.readFrontDistance() < 30) {
+        chappie.stop();
+    }
+    else {
+        chappie.moveForward(150, 150);
+    }
+
+    if (chappie.clawSensor() && chappie.readFrontDistance() > 30 && !chappie.clawSensor()) {
+        chappie.holdBall();
+        delay(1000);
+        chappie.kickBall();
+        delay(1000);
+    }
+    
 }

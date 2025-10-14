@@ -1,26 +1,8 @@
 #include "functions.h"
 
 namespace p1 {
-    void hold() {
+    void ball() {
         
-    }
-
-    void kick() {
-        chappie.moveForward(255, 255);
-        delay(500);
-        chappie.stop();
-        delay(500);
-        chappie.moveBackward(255, 255);
-        delay(500);
-        chappie.stop();
-    }
-
-    void circuit() {
-        chappie.moveForward(200, 200);
-        delay(2000);
-        chappie.moveBackward(200, 200);
-        delay(2000);
-        chappie.stop();
     }
 }
 

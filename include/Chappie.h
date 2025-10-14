@@ -5,6 +5,7 @@
 #include "Motor.h"
 #include "Ultrasonic.h"
 #include "Claw.h"
+#include "FlyingFish.h"
 
 class Chappie {
 private:
@@ -14,6 +15,7 @@ private:
     Ultrasonic ultrasonicRight;
     Ultrasonic ultrasonicLeft;
     Claw claw;
+    FlyingFish ff;
 
 public:
     Chappie();
@@ -28,6 +30,9 @@ public:
     void openClaw();
     void closeClaw();
     bool isClawHolding();
+    void kickBall();
+    void holdBall();
+    bool clawSensor();
 };
 
 #endif // CHAPPIE_H
