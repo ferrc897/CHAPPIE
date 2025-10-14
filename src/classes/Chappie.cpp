@@ -24,3 +24,28 @@ void Chappie::stop() {
   motorRight.stop();
   motorLeft.stop();
 }
+
+int Chappie::readFrontDistance() {
+    return ultrasonicFront.readDistance();
+}
+
+int Chappie::readRightDistance() {
+    return ultrasonicRight.readDistance();
+}
+
+int Chappie::readLeftDistance() {
+    return ultrasonicLeft.readDistance();
+}
+
+void Chappie::openClaw() {
+    claw.open();
+}
+
+void Chappie::closeClaw() {
+    claw.close();
+}
+
+bool Chappie::isClawHolding() {
+    return claw.holding;
+}
+

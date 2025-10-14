@@ -22,6 +22,12 @@ public:
     void moveForward(int speedRight, int speedLeft);
     void moveBackward(int speedRight, int speedLeft);
     void stop();
+    int readFrontDistance();
+    int readRightDistance();
+    int readLeftDistance();
+    void openClaw();
+    void closeClaw();
+    bool isClawHolding();
 };
 
 #endif // CHAPPIE_H

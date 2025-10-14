@@ -10,9 +10,9 @@ class Claw {
     void open();
     void close();
     bool holding = false;
-    Servo clawServo;
    private:
     int pin;
+    Servo clawServo;
 };  
 
 #endif // CLAW_H
