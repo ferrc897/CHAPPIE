@@ -27,12 +27,11 @@ public:
     int readFrontDistance();
     int readRightDistance();
     int readLeftDistance();
-    void openClaw();
-    void closeClaw();
     bool isClawHolding();
-    void kickBall();
-    void holdBall();
     bool clawSensor();
+    int getPosition();
+    void pick();
+    void release();
 };
 
 #endif // CHAPPIE_H

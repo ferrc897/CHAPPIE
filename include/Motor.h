@@ -9,7 +9,7 @@ class Motor {
     int pinIn2;
     int pinEn;
 
-    Motor(int in1, int in2, int en);
+    Motor(int in2, int in1, int en);
     void forward(int speed);
     void backward(int speed);
     void stop();

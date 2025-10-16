@@ -18,6 +18,6 @@ void Claw::open() {
 }
 
 void Claw::close() {
-    clawServo.write(90); // Closed position
+    clawServo.write(30); // Closed position
     holding = true;
 }

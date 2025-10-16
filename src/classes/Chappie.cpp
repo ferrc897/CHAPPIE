@@ -1,9 +1,10 @@
 #include "Chappie.h"
 #include "Motor.h"
 
-Chappie::Chappie() : motorRight(4, 5, 6), motorLeft(7, 8, 9),
-  ultrasonicFront(10, 11), ultrasonicRight(12, 13), ultrasonicLeft(14, 15), claw(9), ff(2) {
+Chappie::Chappie() : motorRight(24, 25, 6), motorLeft(22, 23, 7),
+  ultrasonicFront(50, 51), ultrasonicRight(52, 53), ultrasonicLeft(48, 49), claw(9), ff(2) {
   // Constructor implementation
+  release();
   
 };
 
@@ -23,40 +24,39 @@ void Chappie::stop() {
   // Code to stop the robot
   motorRight.stop();
   motorLeft.stop();
+  delay(500);
 }
 
 int Chappie::readFrontDistance() {
-    return ultrasonicFront.readDistance();
+  return ultrasonicFront.readDistance();
 }
 
 int Chappie::readRightDistance() {
-    return ultrasonicRight.readDistance();
+  return ultrasonicRight.readDistance();
 }
 
 int Chappie::readLeftDistance() {
-    return ultrasonicLeft.readDistance();
-}
-
-void Chappie::openClaw() {
-    claw.open();
-}
-
-void Chappie::closeClaw() {
-    claw.close();
+  return ultrasonicLeft.readDistance();
 }
 
 bool Chappie::isClawHolding() {
-    return claw.holding;
+  return claw.holding;
 }
 
-void Chappie::kickBall() {
-    claw.open();
+void Chappie::pick() {
+  claw.close();
+  delay(500);
 }
 
-void Chappie::holdBall() {
-    claw.close();
+void Chappie:: release() {
+  claw.open();
+  delay(500);
 }
 
 bool Chappie::clawSensor() {
-    return ff.detectsBall();
+  return ff.detectsBall();
+}
+
+int Chappie::getPosition() {
+  return ultrasonicLeft.readDistance() - ultrasonicRight.readDistance();
 }
